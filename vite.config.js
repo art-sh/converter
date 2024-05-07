@@ -1,6 +1,6 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
-import { ViteGhPages } from 'vite-plugin-gh-pages'
+import { ghPages } from 'vite-plugin-gh-pages'
 import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
@@ -19,8 +19,8 @@ export default defineConfig({
         theme_color: 'white',
         background_color: 'white',
         display: 'standalone',
-        scope: '/',
-        start_url: '/',
+        scope: '/converter/',
+        start_url: '/converter/',
         icons: [],
       },
       workbox: {
@@ -40,7 +40,7 @@ export default defineConfig({
       },
       includeAssets: ['**/*'],
     }),
-    ViteGhPages({
+    ghPages({
       branch: 'gh-pages',
     }),
   ],
